@@ -577,7 +577,8 @@ export default function Dashboard() {
           font-size: 3rem;
           font-weight: 700;
           color: #facc15;
-          margin-bottom: 0.5rem;
+          margin-bottom: 3.5rem;
+          margin-top:3rem;
           text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
         }
 

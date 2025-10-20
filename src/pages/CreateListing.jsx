@@ -170,11 +170,11 @@ export default function CreateListing() {
      <div  style={{
         height: "100vh", display: "flex",
         justifyContent: "center",alignItems: "center",
-        backgroundColor: "#e7edf0ff",
+        backgroundColor: "#1a304eff",
       }}>
       <div style={{
       width: "35rem",margin: "2.5rem auto 0", padding: "3.5rem", 
-      backgroundColor: "white", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)", borderRadius: "0.5rem", marginBottom: "6.5rem"}}>
+      backgroundColor: "#1f2937", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)", borderRadius: "0.5rem", marginBottom: "6.5rem"}}>
         <h1 style={{
         fontSize: "1.5rem", fontWeight: "bold", marginBottom: "1.5em", 
         textAlign: "center",  }}>
@@ -191,6 +191,7 @@ export default function CreateListing() {
       border: "1px solid #ccc", 
       padding: "0.5rem", 
       borderRadius: "0.25rem", 
+      backgroundColor:"#1a304eff"
     }} required />
         <input type="text" placeholder="Author" value={author} onChange={(e) => setAuthor(e.target.value)} style={{
       width: "100%", 
@@ -198,6 +199,7 @@ export default function CreateListing() {
       border: "1px solid #ccc", 
       padding: "0.5rem",
       borderRadius: "0.25rem", 
+      backgroundColor:"#1a304eff"
     }} required />
         <input type="text" placeholder="Course (optional)" value={course} onChange={(e) => setCourse(e.target.value)}  style={{
       width: "100%", 
@@ -205,20 +207,26 @@ export default function CreateListing() {
       border: "1px solid #ccc", 
       padding: "0.5rem", 
       borderRadius: "0.25rem", 
+      backgroundColor:"#1a304eff"
     }}/>
         <input type="number" placeholder="Price (₹)" value={price} onChange={(e) => setPrice(e.target.value)}  style={{
-      width: "100%",
+      width: "92%",
        height:"25px",
       border: "1px solid #ccc", 
       padding: "0.5rem", 
       borderRadius: "0.25rem", 
+      backgroundColor:"#1a304eff",
+      marginLeft:"10px",
+      marginBottom:"45px"
     }} required />
         <input type="number" placeholder="Copies Available" value={copies} onChange={(e) => setCopies(e.target.value)}  style={{
-      width: "100%", 
+      width: "92%", 
        height:"25px",
       border: "1px solid #ccc", 
       padding: "0.5rem", 
-      borderRadius: "0.25rem", 
+      borderRadius: "0.25rem",
+      backgroundColor:"#1a304eff" ,
+      marginLeft:"10px"
     }} min="1" required />
         <button type="submit"  style={{
     width: "50%",
