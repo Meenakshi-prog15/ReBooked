@@ -237,11 +237,12 @@ export default function Transactions() {
     border: "1px solid #ddd",
     borderRadius: "8px",
     padding: "16px",
-    backgroundColor: "#fff",
+    backgroundColor: "#1f2937" ,
     boxShadow: "0 1px 3px rgba(0,0,0,0.1)",
   };
 
   const titleStyle = {
+    color:"#b4b920ff",
     fontSize: "1.55rem",
     fontWeight: "600",
     marginBottom: "12px",
@@ -289,7 +290,7 @@ export default function Transactions() {
       <div style={columnStyle}>
         <h2 style={titleStyle}>📝 Pending Approvals (as Seller)</h2>
         {pendingApprovals.length === 0 ? (
-          <p style={{ color: "#6b7280" }}>No pending approvals.</p>
+          <p style={{ color: "#e6e9eeff" }}>No pending approvals.</p>
         ) : (
           <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
             {pendingApprovals.map((t) => (
@@ -297,9 +298,13 @@ export default function Transactions() {
                     borderBottom: "1px solid #eee",
                     paddingBottom: "8px",
                     marginBottom: "8px",
+                    color:"#ffff",
                   }}>
                 <div>
-                  <strong>{t.listings.books.title}</strong> - ₹{t.listings.price} by buyer: {t.buyer_id}
+                  <strong style={{ color: "#96ba08ff" }}>
+  {t.listings.books.title}
+</strong>
+ - ₹{t.listings.price} by buyer: {t.buyer_id}
                 </div>
                 <div style={{ marginTop: "6px" }}>
                   <button
@@ -325,9 +330,9 @@ export default function Transactions() {
       <div style={columnStyle}>
         <h2 style={titleStyle}>⏳ Pending Requests (as Buyer)</h2>
         {pendingRequests.length === 0 ? (
-          <p style={{ color: "#6b7280" }}>No pending requests.</p>
+          <p style={{ color: "#e6e9eeff"  }}>No pending requests.</p>
         ) : (
-          <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
+          <ul style={{ listStyle: "none", padding: 0, margin: 0 ,color: "#e6e9eeff" }}>
             {pendingRequests.map((t) => (
              <li
   key={t.transaction_id}
@@ -338,14 +343,15 @@ export default function Transactions() {
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
+    
   }}
 >
   <div>
-    <strong style={{ fontWeight: "600", color: "#111827" }}>
+    <strong style={{ fontWeight: "600", color: "#96ba08ff" }}>
       {t.listings.books.title}
     </strong>{" "}
-    <span style={{ color: "#374151" }}>- ₹{t.listings.price}</span>{" "}
-    <span style={{ color: "#6b7280" }}>by seller: {t.seller_id}</span>
+    <span style={{ color: "#e4e7ecff" }}>- ₹{t.listings.price}</span>{" "}
+    <span style={{ color: "#ecf0f7ff" }}>by seller: {t.seller_id}</span>
   </div>
   <button
     onClick={() => cancelTransaction(t.transaction_id)}
@@ -368,7 +374,7 @@ export default function Transactions() {
       <div style={columnStyle}>
         <h2 style={titleStyle}>✅ Completed Transactions</h2>
         {completedTransactions.length === 0 ? (
-          <p style={{ color: "#6b7280" }}>No completed transactions.</p>
+          <p style={{ color: "#ffff" }}>No completed transactions.</p>
         ) : (
           <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
             {completedTransactions.map((t) => (
@@ -378,10 +384,10 @@ export default function Transactions() {
                     marginBottom: "8px",
                   }}>
                 <div>
-  <strong style={{ fontWeight: "600", color: "#111827" }}>
+  <strong style={{ fontWeight: "600", color: "#96ba08ff" }}>
     {t.listings.books.title}
   </strong>{" "}
-  <span style={{ color: "#374151" }}>- ₹{t.listings.price}</span>{" "}
+  <span style={{ color: "#e4e9f3ff" }}>- ₹{t.listings.price}</span>{" "}
   {t.buyer_id === user.id ? (
     <span style={{ color: "#16a34a", fontWeight: "500" }}>(You bought this)</span>
   ) : (

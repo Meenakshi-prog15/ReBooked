@@ -654,10 +654,10 @@ export default function Dashboard() {
 
       {/* Welcome Section */}
       <h1 className="dashboard-title">
-        Welcome, {profile?.name || "Loading..."}!
+        Welcome!
       </h1>
-      <p className="dashboard-subtitle">{user.email}</p>
-
+    {/*<p className="dashboard-subtitle">{user.email}</p>
+*/}  
       {/* Buttons */}
       <div className="dashboard-actions">
         <div
