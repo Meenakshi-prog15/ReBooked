@@ -30,61 +30,53 @@ export default function Home() {
 
   const containerStyle = {
     textAlign: "center",
-    minHeight: "100vh",
+    height: "100vh",
+    width: "100vw",
     display: "flex",
-    flexDirection: "column",
-    justifyContent: "flex-start", // position higher
+    justifyContent: "center",
     alignItems: "center",
     fontFamily: "'Dancing Script', cursive",
-    color: "white",
-    backgroundImage: `url("/background.jpg.png")`, // your image
-    backgroundSize: "cover",
-    backgroundPosition: "center",
+    backgroundImage: `url("/background.jpg.png")`,
+    backgroundSize: "contain",
     backgroundRepeat: "no-repeat",
-    paddingTop: "8vh", // push content a little down from top
+    backgroundPosition: "center center",
+    backgroundColor: "#111827",
     position: "relative",
   };
 
-  const headingStyle = {
-    fontSize: "6rem", // bigger
-    fontFamily: "'Pacifico', cursive", // playful handwriting
-    textShadow: "3px 3px 8px rgba(0,0,0,0.7)",
-    marginBottom: "0.5em",
-  };
-
-  const sublineStyle = {
-    fontSize: "2.5rem", // bigger subline
-    fontFamily: "'Dancing Script', cursive",
-    textShadow: "2px 2px 6px rgba(0,0,0,0.6)",
-    marginBottom: "2em",
+  const buttonContainerStyle = {
+    position: "absolute",
+    top: "50%", // vertical center
+    left: "47%", // 👈 moved slightly left (adjust this value)
+    transform: "translate(-50%, -50%)",
   };
 
   const buttonStyle = {
-    padding: "14px 28px",
-    fontSize: "1.3rem",
+    padding: "16px 36px",
+    fontSize: "1.4rem",
     border: "none",
     borderRadius: "12px",
     backgroundColor: "#ff6f61",
-    color: "white",
+    color: "#111827",
     cursor: "pointer",
     transition: "all 0.3s ease",
+    boxShadow: "0px 4px 10px rgba(0,0,0,0.3)",
   };
 
   return (
     <div style={containerStyle}>
-      <h1 style={headingStyle}>Welcome to ReBooked</h1>
-      <p style={sublineStyle}>A platform for students to buy, sell, and exchange books easily.</p>
-
       {user && (
-        <Link to="/dashboard">
-          <button
-            style={buttonStyle}
-            onMouseOver={(e) => (e.target.style.transform = "scale(1.1)")}
-            onMouseOut={(e) => (e.target.style.transform = "scale(1)")}
-          >
-            Go to Dashboard
-          </button>
-        </Link>
+        <div style={buttonContainerStyle}>
+          <Link to="/dashboard">
+            <button
+              style={buttonStyle}
+              onMouseOver={(e) => (e.target.style.transform = "scale(1.1)")}
+              onMouseOut={(e) => (e.target.style.transform = "scale(1)")}
+            >
+              Go to Dashboard
+            </button>
+          </Link>
+        </div>
       )}
     </div>
   );
