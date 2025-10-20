@@ -42,6 +42,7 @@ export default function Home() {
     backgroundPosition: "center center",
     backgroundColor: "#111827",
     position: "relative",
+    
   };
 
   const buttonContainerStyle = {
